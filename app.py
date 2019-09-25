@@ -18,8 +18,9 @@ def profile(name):
 	new_name = name + ' Likes to eat mangoes'
 	return render_template('index.html', name=new_name)
 
-@app.route('/multiply_numbers', methods=['GET', 'POST'])
-def multiply_numbers_post();
+#@app.route('/multiply_numbers', methods=['GET','POST'])
+@app.route('/multiply_numbers', methods=['GET','POST'])
+def multiply_numbers_post():
 	if request.method == 'GET':
 		render_template('multiply_numbers.html')
 	elif request.method == 'POST':
