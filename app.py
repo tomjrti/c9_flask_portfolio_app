@@ -18,6 +18,19 @@ def profile(name):
 	new_name = name + ' Likes to eat mangoes'
 	return render_template('index.html', name=new_name)
 
+@app.route('/multiply_numbers', methods=['GET', 'POST'])
+def multiply_numbers_post();
+	if request.method == 'GET':
+		render_template('multiply_numbers.html')
+	elif request.method == 'POST':
+		print(request.form['text'].split())
+		total = 1
+		try:
+			for str_num in request.form['text'].split():
+				total *= int(str_num)
+			return render_template('multiply_numbers.html', result=str(total))
+		except ValueError:
+			return "Please only place 2 numbers with a space between them"
 
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
